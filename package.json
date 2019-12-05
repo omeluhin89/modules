@@ -1,0 +1,37 @@
+{
+  "name": "modules",
+  "version": "1.0.0",
+  "description": "webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omeluhin89/modules.git"
+  },
+  "keywords": [
+    "modules"
+  ],
+  "author": "omeluhin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omeluhin89/modules/issues"
+  },
+  "homepage": "https://github.com/omeluhin89/modules#readme",
+  "devDependencies": {
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.1",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "html-webpack-plugin": "^3.2.0",
+    "live-server": "^1.2.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
