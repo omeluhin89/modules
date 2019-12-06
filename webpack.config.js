@@ -1,7 +1,8 @@
-const path = require('path'); // Node.js модуль для разрешения путей файлов
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
+    mode: 'production',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -10,20 +11,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.txt$/,
-                use: 'raw-loader'
-            },
-            {
                 test: /\.css$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: '../',
-                            hmr: process.env.NODE_ENV === 'development',
-                        },
-                    },
-                    'css-loader',
+                    MiniCssExtractPlugin.loader, 'css-loader',
                 ],
             },
         ],
@@ -34,9 +24,8 @@ module.exports = {
             filename: "./index.html"
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].css',
-            chunkFilename: '[id].css',
-            ignoreOrder: false,
+            template: "./src/css/style.css",
+            filename: './css/style.css',
         }),
     ]
 };
